@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            TikTok Live Guest
 // @name:de         TikTok Live Gast
-// @version         1.1.0
+// @version         1.1.1
 // @description     View TikTok Live without Login as Guest
 // @description:de  TikTok Live schauen ohne Login als Gast
 // @icon            https://www.tiktok.com/favicon.ico
@@ -31,6 +31,7 @@
         for (let i = 0; i < 10 * 4; i++) {
             document.querySelector("#login-modal")?.parentNode?.parentNode?.parentNode?.remove(); // Remove Login Modal
             document.querySelector("tiktok-cookie-banner")?.remove(); // Remove Cookie Banner
+            document.body.classList.remove("hidden");
             await new Promise(r => setTimeout(r, 250));
         }
     }
